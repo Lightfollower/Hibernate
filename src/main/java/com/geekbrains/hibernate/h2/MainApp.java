@@ -42,7 +42,15 @@ public class MainApp {
                     users) {
                 u.print();
             }
-//            session.getTransaction().commit();
+
+//            Детализация сделка- цена.
+            List<Deal> deals  = session.createQuery("select d from Deal d  ").getResultList();
+            for (Deal d :
+                    deals) {
+                d.print();
+            }
+
+            session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

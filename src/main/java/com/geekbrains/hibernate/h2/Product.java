@@ -17,6 +17,9 @@ public class Product {
     @Column(name = "cost")
     private Integer cost;
 
+    @OneToMany(mappedBy = "product")
+    List<Deal> deals;
+
     @ManyToMany
     @JoinTable(
             name = "purchases",
@@ -27,6 +30,10 @@ public class Product {
 
     public Long getId() {
         return id;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public void setTitle(String title) {

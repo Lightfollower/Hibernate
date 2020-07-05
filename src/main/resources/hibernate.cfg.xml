@@ -38,5 +38,6 @@
 
         <mapping class="com.geekbrains.hibernate.h2.User"/>
         <mapping class="com.geekbrains.hibernate.h2.Product"/>
+        <mapping class="com.geekbrains.hibernate.h2.Deal"/>
     </session-factory>
 </hibernate-configuration>

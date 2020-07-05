@@ -14,6 +14,9 @@ public class User {
     @Column(name = "name")
     private String name;
 
+    @OneToMany(mappedBy = "user")
+    List<Deal> deals;
+
     @ManyToMany
     @JoinTable(
             name = "purchases",
@@ -24,6 +27,10 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
