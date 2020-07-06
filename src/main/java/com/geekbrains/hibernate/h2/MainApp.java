@@ -44,11 +44,15 @@ public class MainApp {
             }
 
 //            Детализация сделка- цена.
+//            Все сделки.
             List<Deal> deals  = session.createQuery("select d from Deal d  ").getResultList();
             for (Deal d :
                     deals) {
                 d.print();
             }
+//            Сделки определённого пользователя.
+            user = (User)session.createQuery("select u from User u where id = 1").getSingleResult();
+            user.getDeals().forEach(Deal::print);
 
             session.getTransaction().commit();
         } catch (Exception e) {

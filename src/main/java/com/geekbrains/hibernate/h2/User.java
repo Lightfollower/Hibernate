@@ -41,6 +41,10 @@ public class User {
         return purchases;
     }
 
+    public List<Deal> getDeals() {
+        return deals;
+    }
+
     public void setPurchases
             (List<Product> purchases) {
         this.purchases = purchases;
